@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilverX - Criação de Vídeos</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS para estilização -->
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">SilverX</h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#inicio" class="nav__link">Início</a></li>
+                    <li class="nav__item"><a href="#criacao" class="nav__link">Criação de Vídeos</a></li>
+                    <li class="nav__item"><a href="#galeria" class="nav__link">Galeria de Vídeos</a></li>
+                    <li class="nav__item"><a href="#sobre" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="#contato" class="nav__link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Início -->
+    <section id="inicio" class="section">
+        <div class="container">
+            <h2 class="section__title">Bem-vindo à SilverX</h2>
+            <p class="section__description">Aqui você pode criar vídeos curtos de animação de forma fácil e rápida!</p>
+        </div>
+    </section>
+
+    <!-- Seção Criação de Vídeos -->
+    <section id="criacao" class="section">
+        <div class="container">
+            <h2 class="section__title">Crie seus Vídeos</h2>
+            <form action="criar_video.php" method="post" class="form">
+                <label for="descricao" class="form__label">Descreva o seu vídeo:</label>
+                <textarea id="descricao" name="descricao" rows="4" cols="50" class="form__input"></textarea>
+                <button type="submit" class="form__button">Criar Vídeo</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Seção Galeria de Vídeos -->
+    <section id="galeria" class="section">
+        <div class="container">
+            <h2 class="section__title">Galeria de Vídeos</h2>
+            <!-- Aqui serão exibidos os vídeos gerados pelos usuários -->
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="section__title">Sobre a SilverX</h2>
+            <p class="section__description">Conheça mais sobre a nossa empresa e a equipe por trás da plataforma.</p>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="section">
+        <div class="container">
+            <h2 class="section__title">Entre em Contato</h2>
+            <p class="section__description">Estamos aqui para ajudar. Envie-nos uma mensagem!</p>
+            <form action="enviar_mensagem.php" method="post" class="form">
+                <label for="nome" class="form__label">Nome:</label>
+                <input type="text" id="nome" name="nome" class="form__input">
+                <label for="email" class="form__label">E-mail:</label>
+                <input type="email" id="email" name="email" class="form__input">
+                <label for="mensagem" class="form__label">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" cols="50" class="form__input"></textarea>
+                <button type="submit" class="form__button">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; 2024 SilverX. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

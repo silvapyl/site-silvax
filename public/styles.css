@@ -1,0 +1,94 @@
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #152642;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.logo {
+    margin: 0;
+}
+
+.nav {
+    text-align: right;
+}
+
+.nav__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__item {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav__link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Seções */
+.section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section__title {
+    margin-bottom: 20px;
+}
+
+.section__description {
+    color: #666666;
+}
+
+/* Formulário */
+.form {
+    margin-top: 20px;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+}
+
+.form__button {
+    background-color: #152642;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.form__button:hover {
+    background-color: #1a3562;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #152642;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}

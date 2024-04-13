@@ -1,0 +1,3 @@
+mv index.html public/
+mv style.css public/
+

@@ -1,0 +1,97 @@
+j<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilverX - Criação de Vídeos</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS para estilização -->
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>SilverX</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#criacao">Criação de Vídeos</a></li>
+                <li><a href="#galeria">Galeria de Vídeos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Início -->
+    <section id="inicio">
+        <h2>Bem-vindo à SilverX</h2>
+        <p>Aqui você pode criar vídeos curtos de animação de forma fácil e rápida!</p>
+    </section>
+
+    <!-- Seção Criação de Vídeos -->
+    <section id="criacao">
+        <h2>Crie seus Vídeos</h2>
+        <form id="formulario-descricao" action="/submit-descricao" method="post" onsubmit="enviarDescricao(event)">
+            <label for="descricao">Descreva o seu vídeo:</label>
+            <textarea id="descricao" name="descricao" rows="4" cols="50"></textarea>
+            <button type="submit">Criar Vídeo</button>
+        </form>
+    </section>
+
+    <!-- Seção Galeria de Vídeos -->
+    <section id="galeria">
+        <h2>Galeria de Vídeos</h2>
+        <!-- Aqui serão exibidos os vídeos gerados pelos usuários -->
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre a SilverX</h2>
+        <p>Conheça mais sobre a nossa empresa e a equipe por trás da plataforma.</p>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <p>Estamos aqui para ajudar. Envie-nos uma mensagem!</p>
+        <form action="enviar_mensagem.php" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50"></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 SilverX. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script JavaScript para lidar com a submissão do formulário e exibição do resultado -->
+    <script>
+        function enviarDescricao(event) {
+          event.preventDefault(); // Impede o envio do formulário padrão
+
+          const descricao = document.getElementById('descricao').value; // Captura a descrição do vídeo do campo de texto
+          const formData = new FormData(); // Cria um objeto FormData para enviar os dados para o servidor
+
+          formData.append('descricao', descricao); // Adiciona a descrição do vídeo ao objeto FormData
+
+          // Envia uma requisição POST para o servidor Express
+          fetch('/submit-descricao', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.text()) // Converte a resposta para texto
+          .then(result => {
+            // Exibe o resultado no navegador
+            document.getElementById('resultado-sentimento').innerText = result;
+          })
+          .catch(error => console.error('Erro:', error));
+        }
+    </script>
+</body>
+</html>
+
